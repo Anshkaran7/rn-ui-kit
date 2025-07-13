@@ -39,23 +39,24 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium">
-            <Link
+          <div className="flex flex-row space-x-8 text-sm font-medium">
+            {/* Documentation coming soon */}
+            {/* <Link
               href="#"
               className="transition-all duration-200 text-center sm:text-left hover:scale-105 hover:underline"
               style={{ color: "#004030" }}
             >
               Documentation
-            </Link>
+            </Link> */}
             <Link
-              href="#"
+              href="https://github.com/Anshkaran7/rn-ui-kit"
               className="transition-all duration-200 text-center sm:text-left hover:scale-105 hover:underline"
               style={{ color: "#004030" }}
             >
               GitHub
             </Link>
             <Link
-              href="#"
+              href="mailto:ansh.tsx@gmail.com"
               className="transition-all duration-200 text-center sm:text-left hover:scale-105 hover:underline"
               style={{ color: "#004030" }}
             >
@@ -71,7 +72,7 @@ export function Footer() {
             className="text-sm font-medium mb-4 sm:mb-0"
             style={{ color: "#004030", opacity: 0.7 }}
           >
-            © 2024 rn-ui-kit. All rights reserved.
+            © 2025 Karan. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <Link

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Check, Code2, Sparkles, Users } from "lucide-react";
+import { SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export function EarlyAccessCTA() {
   return (
@@ -40,27 +41,37 @@ export function EarlyAccessCTA() {
               className="text-base sm:text-lg mb-8 leading-relaxed font-medium"
               style={{ opacity: 0.9 }}
             >
-              Join 500+ developers building the future of mobile UI. Get
-              notified when we launch and receive exclusive early access.
+              Be among the first developers to access our React Native UI
+              components. Sign up now and get notified when we launch with
+              exclusive early access.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="backdrop-blur-sm h-12 flex-1 border-0 text-white placeholder:text-white font-medium rounded-lg"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-            />
-            <Button
-              variant="secondary"
-              size="lg"
-              className="h-12 px-6 shadow-lg hover:scale-105 transition-all duration-300 font-semibold rounded-lg"
-              style={{ backgroundColor: "#DCDD8", color: "#004030" }}
-            >
-              <Users className="mr-2 h-4 w-4" />
-              Join Waitlist
-            </Button>
+          <div className="flex justify-center max-w-md mx-auto mb-8">
+            <SignedOut>
+              <SignUpButton mode="modal">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="h-12 px-8 shadow-lg hover:scale-105 transition-all duration-300 font-semibold rounded-lg"
+                  style={{ backgroundColor: "#DCDD8", color: "#004030" }}
+                >
+                  <Users className="mr-2 h-4 w-4" />
+                  Sign Up for Early Access
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <div className="text-center">
+                <div
+                  className="inline-flex items-center px-6 py-3 rounded-lg font-semibold text-lg"
+                  style={{ backgroundColor: "#DCDD8", color: "#004030" }}
+                >
+                  <Check className="mr-2 h-5 w-5" />
+                  You're on the waitlist!
+                </div>
+              </div>
+            </SignedIn>
           </div>
 
           <div

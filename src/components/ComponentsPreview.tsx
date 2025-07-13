@@ -97,13 +97,14 @@ export function ComponentsPreview() {
             className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl mb-4"
             style={{ color: "#004030" }}
           >
-            11 Essential Components
+            Essential Components (Coming Soon)
           </h2>
           <p
             className="text-base sm:text-lg max-w-2xl mx-auto font-medium"
             style={{ color: "#004030", opacity: 0.8 }}
           >
-            Everything you need to build beautiful mobile interfaces
+            Everything you need to build beautiful mobile interfaces - currently
+            in development
           </p>
         </div>
 
@@ -150,6 +151,7 @@ export function ComponentsPreview() {
           })}
         </div>
 
+        {/* Components list coming soon */}
         {/* <div className="text-center mt-12">
           <Button
             variant="outline"

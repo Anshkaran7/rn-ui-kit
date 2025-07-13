@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Code2, Github } from "lucide-react";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import Link from "next/link";
 
 export function Header() {
@@ -60,7 +67,8 @@ export function Header() {
               style={{ backgroundColor: "#4A9782" }}
             ></span>
           </Link>
-          <Link
+          {/* Documentation coming soon */}
+          {/* <Link
             href="#docs"
             className="text-sm font-medium transition-all duration-200 hover:scale-105 relative group"
             style={{ color: "#004030" }}
@@ -70,21 +78,46 @@ export function Header() {
               className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
               style={{ backgroundColor: "#4A9782" }}
             ></span>
-          </Link>
+          </Link> */}
         </nav>
-        <Button
-          variant="outline"
-          size="sm"
-          className="hover:scale-105 transition-all duration-300 font-medium"
-          style={{
-            borderColor: "#4A9782",
-            color: "#004030",
-            backgroundColor: "rgba(74, 151, 130, 0.1)",
-          }}
-        >
-          <Github className="mr-2 h-4 w-4" />
-          GitHub
-        </Button>
+        <div className="flex items-center space-x-3">
+          {/* <SignedOut>
+            <SignInButton>
+              <Button
+                variant="outline"
+                size="sm"
+                className="hover:scale-105 transition-all duration-300 font-medium"
+                style={{
+                  borderColor: "#4A9782",
+                  color: "#004030",
+                  backgroundColor: "rgba(74, 151, 130, 0.1)",
+                }}
+              >
+                Sign In
+              </Button>
+            </SignInButton>
+            <SignUpButton>
+              <Button
+                size="sm"
+                className="text-white hover:scale-105 transition-all duration-300 font-medium"
+                style={{
+                  background: "linear-gradient(to right, #004030, #4A9782)",
+                }}
+              >
+                Sign Up
+              </Button>
+            </SignUpButton>
+          </SignedOut> */}
+          <SignedIn>
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-8 h-8",
+                },
+              }}
+            />
+          </SignedIn>
+        </div>
       </div>
     </header>
   );
